@@ -35,4 +35,12 @@ VALUES (1, 2),
 	   (3, 3),
 	   (3, 4);
 
-INSERT INTO Comentario (IdPaciente)
+INSERT INTO Comentario (IdPaciente, FeedBack)
+VALUES (1, 'Gostei muito do atendimento. Fiquei muito satisfeito com a clínica e pretendo fazer meu acompanhamento aqui!'),
+       (2, 'Não gostei da clínica, cheguei adiantado e ainda assim tive que ficar esperando masi de 2 horas pois o médico se atrasou.'),
+	   (3, 'Clínica boa. Satisfeito.')
+
+INSERT INTO Consulta (IdPaciente, IdMedico, DataConsulta, HorarioConsulta, Prontuario)
+VALUES (2, 1, '20-10-2023', '08:30:00', 'Paciente alterado em consultório. Medicação aumentada para 200mg por dia. 100mg antes do almoço e 100mg antes de adormecer.'),
+       (1, 2, '01-10-2023', '07:00:00', 'Paciente saudável, consulta apenas para exame de rotina. Resultado do eletrocardiograma dentro da normalidade, nenhuma alteração.'),
+	   (3, 3, '15-10-2023', '18:00:00', 'Paciente com lesão no menisco, recuperação demorada. Receitada uso de anti-inflamatório e repouso absoluto. Deverá retornar em 10 dias.')

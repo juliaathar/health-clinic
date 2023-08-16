@@ -61,7 +61,7 @@ CREATE TABLE Comentario
 (
   IdComentario INT PRIMARY KEY IDENTITY,
   IdPaciente INT FOREIGN KEY REFERENCES Paciente (IdPaciente),
-  Avaliacao VARCHAR(256) NOT NULL
+  FeedBack VARCHAR(256) NOT NULL
 )
 
 CREATE TABLE Consulta 
@@ -69,7 +69,6 @@ CREATE TABLE Consulta
   IdConsulta INT PRIMARY KEY IDENTITY,
   IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente),
   IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico),
-  IdComentario INT FOREIGN KEY REFERENCES Comentario (IdComentario),
   DataConsulta DATE NOT NULL,
   HorarioConsulta TIME NOT NULL,
   Prontuario VARCHAR(256) NOT NULL 
