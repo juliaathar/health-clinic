@@ -57,19 +57,20 @@ CREATE TABLE MedEspecialidade
   IdEspecialidade INT FOREIGN KEY REFERENCES Especialidade(IdEspecialidade)
 )
 
-CREATE TABLE Comentario
-(
-  IdComentario INT PRIMARY KEY IDENTITY,
-  IdPaciente INT FOREIGN KEY REFERENCES Paciente (IdPaciente),
-  FeedBack VARCHAR(256) NOT NULL
-)
-
 CREATE TABLE Consulta 
 (
   IdConsulta INT PRIMARY KEY IDENTITY,
-  IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente),
-  IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico),
+  IdMedico INT FOREIGN KEY REFERENCES Medico (IdMedico) NOT NULL,
+  IdEspecialidade INT FOREIGN KEY REFERENCES Especialidade (IdEspecialidade) NOT NULL,
+  IdPaciente INT FOREIGN KEY REFERENCES Paciente (IdPaciente) NOT NULL,
   DataConsulta DATE NOT NULL,
   HorarioConsulta TIME NOT NULL,
   Prontuario VARCHAR(256) NOT NULL 
+)
+
+CREATE TABLE Comentario
+(
+  IdComentario INT PRIMARY KEY IDENTITY,
+  IdConsulta INT FOREIGN KEY REFERENCES Consulta(IdConsulta),
+  FeedBack VARCHAR(256) NOT NULL
 )
