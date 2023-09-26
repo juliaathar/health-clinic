@@ -8,5 +8,18 @@ namespace webapi.healthclinic.Domains
     {
         [Key]
         public Guid IdMedEspecialidade { get; set; } = Guid.NewGuid();
+
+        [Required(ErrorMessage = "Informe o médico")]
+        public Guid IdMedico { get; set; } = Guid.NewGuid();
+
+        [ForeignKey(nameof(IdMedico))]
+        public Medico? Medico { get; set; }
+
+        [Required(ErrorMessage = "Informe a especialidade")]
+        public Guid IdEspecialidade { get; set; } = Guid.NewGuid();
+
+        [ForeignKey(nameof(IdEspecialidade))]
+
+        public Especialidade? Especialidade { get; set; }
     }
 }
