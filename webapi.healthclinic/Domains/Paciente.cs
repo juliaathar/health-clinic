@@ -7,7 +7,7 @@ namespace webapi.healthclinic.Domains
     public class Paciente
     {
         [Key]
-        public Guid MyProperty { get; set; } = Guid.NewGuid();
+        public Guid IdPaciente { get; set; } = Guid.NewGuid();
 
         [Column(TypeName = "INT(9)")]
         [Required(ErrorMessage = "Informe o RG")]
@@ -25,5 +25,12 @@ namespace webapi.healthclinic.Domains
         [Column(TypeName = "INT(11)")]
         [Required(ErrorMessage = "Informe o telefone")]
         public int? Telefone { get; set; }
+
+        [Required(ErrorMessage = "Informe qual seu usuário")]
+        public Guid IdUsuario { get; set; }
+
+        [ForeignKey(nameof(IdUsuario))]
+        public Usuario? Usuario { get; set; }
+
     }
 }

@@ -3308,11 +3308,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\47447272809\\Desktop\\webapi.healthclinic\\webapi.healthclinic.csproj",
+      "projectUniqueName": "C:\\Users\\47447272809\\Desktop\\health-clinic\\webapi.healthclinic\\webapi.healthclinic.csproj",
       "projectName": "webapi.healthclinic",
-      "projectPath": "C:\\Users\\47447272809\\Desktop\\webapi.healthclinic\\webapi.healthclinic.csproj",
+      "projectPath": "C:\\Users\\47447272809\\Desktop\\health-clinic\\webapi.healthclinic\\webapi.healthclinic.csproj",
       "packagesPath": "C:\\Users\\47447272809\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\47447272809\\Desktop\\webapi.healthclinic\\obj\\",
+      "outputPath": "C:\\Users\\47447272809\\Desktop\\health-clinic\\webapi.healthclinic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\47447272809\\AppData\\Roaming\\NuGet\\NuGet.Config",
