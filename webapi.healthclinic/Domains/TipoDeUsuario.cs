@@ -7,7 +7,7 @@ namespace webapi.healthclinic.Domains
     public class TipoDeUsuario
     {
         [Key] 
-        public Guid IdTipoDeUsuario { get; set; } = Guid.NewGuid();
+        public Guid IdTipoDeUsuario { get; set; }
 
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "Título de usuário obrigatório")]

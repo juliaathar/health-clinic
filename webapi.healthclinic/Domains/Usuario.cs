@@ -9,7 +9,7 @@ namespace webapi.healthclinic.Domains
     public class Usuario
     {
         [Key]
-        public Guid IdUsuario { get; set; } = Guid.NewGuid();
+        public Guid IdUsuario { get; set; }
 
         [Column(TypeName = "VARCHAR(200)")]
         [Required(ErrorMessage = "Email obrigatório")]
