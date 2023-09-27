@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata;
-using webapi.healthclinic.Utils;
 
 namespace webapi.healthclinic.Domains
 {
@@ -15,9 +14,9 @@ namespace webapi.healthclinic.Domains
         [Required(ErrorMessage = "Informe a data da consulta")]
         public DateTime DataConsulta { get; set; }
 
-        [Column(TypeName = "SMALLDATETIME")]
+        [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Informe a hora da consulta")]
-        public TimeSpanConvert? HorarioConsulta { get; set; }
+        public TimeSpan HorarioConsulta { get; set; }
 
         [Column(TypeName = "TEXT")]
         [Required(ErrorMessage = "Transcreva o prontuário do paciente")]

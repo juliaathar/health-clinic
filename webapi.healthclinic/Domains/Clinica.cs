@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using webapi.healthclinic.Utils;
 
 namespace webapi.healthclinic.Domains
 {
@@ -23,13 +22,13 @@ namespace webapi.healthclinic.Domains
         [Required(ErrorMessage = "Informe o CPNJ")]
         public string? CPNJ { get; set; }
 
-        [Column(TypeName = "SMALLDATETIME")]
+        [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Informe o horário de abertura")]
-        public TimeSpanConvert? HorarioAbertura { get; set; }
+        public TimeSpan HorarioAbertura { get; set; }
 
 
-        [Column(TypeName = "SMALLDATETIME")]
+        [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Informe o horário de abertura")]
-        public TimeSpanConvert? HorarioFechamento { get; set; }
+        public TimeSpan HorarioFechamento { get; set; }
     }
 }
