@@ -12,6 +12,5 @@ namespace webapi.healthclinic.Interfaces
 
         void Deletar(Guid id);
 
-
     }
 }
