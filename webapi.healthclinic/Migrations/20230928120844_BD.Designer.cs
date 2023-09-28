@@ -12,7 +12,7 @@ using webapi.healthclinic.Context;
 namespace webapi.healthclinic.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    [Migration("20230927133125_BD")]
+    [Migration("20230928120844_BD")]
     partial class BD
     {
         /// <inheritdoc />
