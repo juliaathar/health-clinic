@@ -4,7 +4,12 @@ namespace webapi.healthclinic.Interfaces
 {
     public interface IPacienteRepository
     {
-        List<Consulta> ListarConsultas();
-        List<Comentario> ListarComentario();
+        void Cadastrar(Paciente paciente);
+
+        void Deletar(Guid id);
+
+        List<Paciente> Listar();
+
+        void BuscarConsultas(Consulta consulta, Guid id);
     }
 }

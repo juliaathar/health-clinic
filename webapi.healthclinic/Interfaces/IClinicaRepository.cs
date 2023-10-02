@@ -6,6 +6,5 @@ namespace webapi.healthclinic.Interfaces
     {
         List<Clinica> Listar();
         void Cadastrar(Clinica clinica);
-        void Atualizar(Clinica clinica, Guid id);
     }
 }

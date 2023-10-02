@@ -8,8 +8,6 @@ namespace webapi.healthclinic.Interfaces
 
         List<Especialidade> Listar();
 
-        void Atualizar(Especialidade especialidade, Guid id);
-
         void Deletar(Guid id);
     }
 }
