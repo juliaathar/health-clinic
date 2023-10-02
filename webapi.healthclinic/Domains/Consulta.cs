@@ -16,6 +16,8 @@ namespace webapi.healthclinic.Domains
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Informe a hora da consulta")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm:ss")]
         public TimeSpan HorarioConsulta { get; set; }
 
         [Column(TypeName = "TEXT")]

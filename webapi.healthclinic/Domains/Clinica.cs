@@ -24,11 +24,15 @@ namespace webapi.healthclinic.Domains
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Informe o horário de abertura")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm:ss")]
         public TimeSpan HorarioAbertura { get; set; }
 
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "Informe o horário de abertura")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm:ss")] 
         public TimeSpan HorarioFechamento { get; set; }
     }
 }

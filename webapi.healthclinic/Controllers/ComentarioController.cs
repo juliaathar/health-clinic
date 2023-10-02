@@ -1,0 +1,63 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using webapi.healthclinic.Domains;
+using webapi.healthclinic.Interfaces;
+using webapi.healthclinic.Repositories;
+
+namespace webapi.healthclinic.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ComentarioController : ControllerBase
+    {
+        private IComentarioRepository _comentarioRepository;
+
+        public ComentarioController()
+        {
+            _comentarioRepository = new ComentarioRepository();
+        }
+
+
+        [HttpPost]
+        public IActionResult Post(Comentario comentario)
+        {
+            try
+            {
+                _comentarioRepository.Comentar(comentario);
+                return StatusCode(201);
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            try
+            {
+                return Ok(_comentarioRepository.Listar());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(Comentario comentario, Guid id)
+        {
+            try
+            {
+                _comentarioRepository.Deletar(id);
+                return StatusCode(203);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+    }
+}
