@@ -8,6 +8,7 @@ namespace webapi.healthclinic.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class ClinicaController : ControllerBase
     {
         private IClinicaRepository _clinicaRepository;
@@ -17,6 +18,11 @@ namespace webapi.healthclinic.Controllers
             _clinicaRepository = new ClinicaRepository();
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de cadastrar uma clinica
+        /// </summary>
+        /// <param name="clinica"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Clinica clinica)
         {

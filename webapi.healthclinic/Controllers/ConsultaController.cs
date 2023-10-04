@@ -8,6 +8,7 @@ namespace webapi.healthclinic.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class ConsultaController : ControllerBase
     {
         private IConsultaRepository _consultaRepository;
@@ -17,6 +18,11 @@ namespace webapi.healthclinic.Controllers
             _consultaRepository = new ConsultaRepository();
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de cadastrar uma consulta
+        /// </summary>
+        /// <param name="consulta"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Consulta consulta)
         {
@@ -32,6 +38,11 @@ namespace webapi.healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de deletar uma consulta
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         public IActionResult Delete(Guid id)
         {
@@ -46,6 +57,12 @@ namespace webapi.healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de atualizar uma consulta
+        /// </summary>
+        /// <param name="consulta"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut]
         public IActionResult Put(Consulta consulta, Guid id)
         {

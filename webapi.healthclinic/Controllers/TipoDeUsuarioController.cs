@@ -18,6 +18,10 @@ namespace webapi.healthclinic.Controllers
             _tiposDeUsuarioRepository = new TipoDeUsuarioRepository();
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de listar tipos de usuario
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {

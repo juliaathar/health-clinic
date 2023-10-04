@@ -8,6 +8,7 @@ namespace webapi.healthclinic.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class ComentarioController : ControllerBase
     {
         private IComentarioRepository _comentarioRepository;
@@ -17,7 +18,11 @@ namespace webapi.healthclinic.Controllers
             _comentarioRepository = new ComentarioRepository();
         }
 
-
+        /// <summary>
+        ///  endpoint que aciona o método de cadastrar um comentario
+        /// </summary>
+        /// <param name="comentario"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Comentario comentario)
         {
@@ -33,6 +38,10 @@ namespace webapi.healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// endpoint que aciona o método de listar os comentários
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -46,12 +55,17 @@ namespace webapi.healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// endpoint que aciona o método de deletar comentário
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         public IActionResult Delete(Comentario comentario, Guid id)
         {
             try
             {
-                _comentarioRepository.Deletar(id);
+                _comentarioRepository.Deletar(comentario, id);
                 return StatusCode(203);
             }
             catch (Exception e)

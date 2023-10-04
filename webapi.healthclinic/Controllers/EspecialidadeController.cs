@@ -8,6 +8,7 @@ namespace webapi.healthclinic.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class EspecialidadeController : ControllerBase
     {
         private IEspecialidadeRepository _especialidadeRepository;
@@ -17,6 +18,12 @@ namespace webapi.healthclinic.Controllers
             _especialidadeRepository = new EspecialidadeRepository();
         }
 
+
+        /// <summary>
+        ///  endpoint que aciona o método de cadastrar uma especialidade
+        /// </summary>
+        /// <param name="especialidade"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Especialidade especialidade)
         {
@@ -32,6 +39,10 @@ namespace webapi.healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de listar as especialidades
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -45,6 +56,11 @@ namespace webapi.healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de deletar uma especialidade
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         public IActionResult Delete(Guid id)
         {

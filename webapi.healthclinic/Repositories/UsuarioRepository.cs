@@ -1,6 +1,7 @@
 ﻿using webapi.healthclinic.Context;
 using webapi.healthclinic.Domains;
 using webapi.healthclinic.Interfaces;
+using webapi.healthclinic.Utils;
 
 namespace webapi.healthclinic.Repositories
 {
@@ -73,6 +74,41 @@ namespace webapi.healthclinic.Repositories
         public List<Usuario> Listar()
         {
             return _clinicContext.Usuario.ToList();
+        }
+
+        public Usuario BuscarPorEmailESenha(string email, string senha)
+        {
+            try
+            {
+                Usuario usuario = _clinicContext.Usuario.Select(u => new Usuario
+                {
+                    IdUsuario = u.IdUsuario,
+                    Nome = u.Nome,
+                    Email = u.Email,
+                    Senha = u.Senha,
+                    TipoDeUsuario = new TipoDeUsuario
+                    {
+                        IdTipoDeUsuario = u.IdTipoDeUsuario,
+                        Titulo = u.TipoDeUsuario!.Titulo
+                    }
+                }).FirstOrDefault(u => u.Email == email)!;
+
+                if (usuario != null)
+                {
+                    bool confere = Criptografia.CompararHash(senha, usuario.Senha!);
+
+                    if (confere)
+                    {
+                        return usuario;
+                    }
+                }
+                return null!;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

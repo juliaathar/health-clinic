@@ -12,5 +12,7 @@ namespace webapi.healthclinic.Interfaces
 
         void Deletar(Guid id);
 
+        Usuario BuscarPorEmailESenha(string email, string senha);
+
     }
 }

@@ -8,6 +8,7 @@ namespace webapi.healthclinic.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class PacienteController : ControllerBase
     {
         private IPacienteRepository _pacienteRepository;
@@ -16,6 +17,13 @@ namespace webapi.healthclinic.Controllers
             _pacienteRepository = new PacienteRepository();
         }
 
+
+        /// <summary>
+        ///  endpoint que aciona o método de buscar consultas
+        /// </summary>
+        /// <param name="consulta"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult GetAppointments(Consulta consulta, Guid id)
         {
@@ -30,6 +38,11 @@ namespace webapi.healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de cadastrar um paciente
+        /// </summary>
+        /// <param name="paciente"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Paciente paciente)
         {
@@ -45,6 +58,11 @@ namespace webapi.healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de deletar um paciente
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         public IActionResult Delete(Guid id)
         {
@@ -59,6 +77,10 @@ namespace webapi.healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        ///  endpoint que aciona o método de listar os pacientes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
